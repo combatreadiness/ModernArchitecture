@@ -31,4 +31,17 @@ DDD는 비즈니스 도메인의 개념과 구조를 이해하고, 이를 객체
 - 성능: DDD는 모듈화와 유연성이 중요하다는 것 때문에, 성능 문제가 발생할 수 있습니다.
 
 
+## 프로세스
+1. 비즈니스 도메인 이해(Understanding the business domain): DDD는 비즈니스 도메인에 집중하는 설계 방식입니다. 따라서, DDD를 구현하기 전에는 먼저 비즈니스 도메인에 대해 충분한 이해를 해야 합니다. 비즈니스 전문가와 대화를 나누고 도메인 모델을 만들어서 문제를 잘 이해하고 분석합니다.
 
+2. 유비쿼터스 언어 사용(Developing a ubiquitous language): DDD는 유비쿼터스 언어를 사용하여 도메인 전문가와 개발자 간의 의사소통을 원활하게 합니다. 유비쿼터스 언어는 비즈니스 용어와 용어의 의미를 공유하는 공통 언어로, 모든 관련자들은 이 언어를 사용하여 의사소통합니다.
+
+3. Bounded Context 식별(Identifying bounded contexts): Bounded Context는 특정 도메인에서의 언어와 모델의 경계를 의미합니다. 따라서, DDD를 구현하기 위해서는 Bounded Context를 식별하고, 도메인 전문가와 개발자가 이해할 수 있는 모델을 만들어야 합니다.
+
+4. Entity 및 Value Object 정의(Defining entities and value objects): Entity와 Value Object는 DDD에서 중요한 개념입니다. Entity는 유일한 식별자와 상태를 가지며, Value Object는 불변성을 가지며 일정한 상태를 유지합니다. 따라서, DDD를 구현하기 위해서는 Entity와 Value Object를 정의하고, 도메인 모델을 만들어야 합니다.
+
+5. Aggregate 및 Repository 정의(Defining aggregates and repositories): Aggregate는 Entity와 Value Object의 그룹입니다. Repository는 Aggregate를 저장하고, 검색하고, 수정하는 인터페이스를 제공합니다. 따라서, DDD를 구현하기 위해서는 Aggregate와 Repository를 정의하고, 도메인 모델을 만들어야 합니다.
+
+6. 도메인 서비스 정의(Defining domain services): 도메인 서비스는 도메인 모델에서 수행되는 비즈니스 로직입니다. 따라서, DDD를 구현하기 위해서는 도메인 서비스를 정의하고, 도메인 모델을 만들어야 합니다.
+
+7. 인프라 구현(Implementing the infrastructure): 마지막으로, DDD는 도메인 모델을 지원하는 데이터베이스, 웹 서버, 메시지 브로커 등의 기술적 구성 요소를 구현하는 것을 필요로합니다.
