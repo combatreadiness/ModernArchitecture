@@ -64,3 +64,43 @@ Entity는 고유한 식별자(identity)와 시간에 따른 생명주기(lifecyc
 Entity와 Value Object의 차이점을 설명하는 예시를 들어보겠습니다. 호텔 예약 관리 시스템이 있다고 가정해보겠습니다. 예약은 유일한 식별자(예약 번호)와 생명주기를 가진 Entity입니다. 고객이 예약을 취소하더라도, 예약 객체는 삭제되지 않고 상태 속성이 "취소됨"으로 업데이트됩니다.
 
 이제 상품의 배송비를 계산하는 시스템이 있다고 가정해보겠습니다. 상품의 무게와 크기는 속성(attribute)으로 정의되며, 고유한 식별자를 갖지 않기 때문에 Value Object입니다. 만약 두 상품이 동일한 무게와 크기를 가진다면, 식별자를 추적할 필요 없이 동일하게 처리할 수 있습니다.
+
+## 구조
+### 계층 구조
+1. Presentation Layer: 사용자 인터페이스와 관련된 코드를 포함합니다. 애플리케이션의 사용자와 상호작용하며, 유스케이스를 구성하는 역할을 합니다.
+2. Application Layer: 사용자 인터페이스와 도메인 계층 사이의 중간 계층입니다.애플리케이션의 비즈니스 로직을 구현하며, 도메인 계층에서 제공하는 서비스와 도메인 객체를 사용합니다.
+3. Domain Layer: 애플리케이션의 핵심이 되는 도메인 모델을 포함합니다. 도메인 객체와 그 관련 로직을 정의하며, 엔티티와 밸류 객체, 그리고 도메인 서비스를 포함합니다.
+4. Infrastructure Layer: 애플리케이션의 인프라스트럭처와 관련된 코드를 포함합니다. 데이터베이스, 메시징 시스템, 웹 서비스 등과 같은 외부 시스템과의 연결을 처리합니다.
+5. Test Layer: 테스트 코드를 포함합니다. 단위 테스트, 통합 테스트, 시스템 테스트 등을 수행하며, 품질 보증과 디버깅에 사용됩니다.
+
+### Onion 구조
+이 접근 방식에서 애플리케이션은 도메인 레이어가 중심이 되고 인프라스트럭처 레이어가 바깥쪽에 위치한 동심원으로 나뉘어집니다.
+
+
+## 폴더 구조
+
+```markdown
+├── application
+│   ├── services
+│   └── use_cases
+├── domain
+│   ├── entities
+│   ├── events
+│   ├── repositories
+│   ├── services
+│   └── value_objects
+├── infrastructure
+│   ├── repositories
+│   └── services
+├── interfaces
+│   ├── controllers
+│   ├── gateways
+│   ├── presenters
+│   └── views
+└── tests
+    ├── application
+    ├── domain
+    ├── infrastructure
+    └── interfaces
+
+```
