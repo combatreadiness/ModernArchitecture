@@ -79,6 +79,8 @@ Entity와 Value Object의 차이점을 설명하는 예시를 들어보겠습니
 
 ## 폴더 구조
 
+굳이 이렇게 따라야 할 필요는 없지만 보통의 폴더구조는 이렇습니다.
+
 ```markdown
 ├── application
 │   ├── services
